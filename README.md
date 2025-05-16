@@ -7,5 +7,10 @@
     <li>sends HTTP requests asynchronously to speed up lookups</li>
     <li>accepts MAC addresses in various formats</li>
 </ul>
+<h2>Sponsor & Support</h2>
+<p>
+    To keep this app maintained and up-to-date please consider sponsoring it on GitHub. Or if you are looking for a private support or help in customizing the experience, then reach out to me on Telegram
+    <a href="https://t.me/voidboost">@voidboost</a>.
+</p>
 <h2>License</h2>
 <a href="./LICENSE">MIT</a>
