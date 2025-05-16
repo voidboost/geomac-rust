@@ -1,0 +1,51 @@
+syntax = "proto2";
+
+package google;
+
+message Request {
+    message Header {
+        optional string version = 1;
+        optional string platform = 2;
+        optional string locale = 5;
+    }
+
+    optional Header header = 1;
+
+    message Location {
+        message Data {
+            message Wifi {
+                optional string text = 1;
+                optional int64 mac = 8;
+            }
+
+            optional int64 timestamp = 1;
+            repeated Wifi wifis = 2;
+            optional int32 size = 3;
+        }
+
+        optional Data data = 2;
+    }
+
+    repeated Location locations = 4;
+}
+
+message Response {
+    message Data {
+        message Wifi {
+            message WifiData {
+                message Location {
+                    optional fixed32 latitude = 1;   // X * pow(10, -7)
+                    optional fixed32 longitude = 2;  // X * pow(10, -7)
+                }
+
+                optional Location location = 1;
+            }
+
+            optional WifiData wifiData = 1;
+        }
+
+        repeated Wifi wifis = 3;
+    }
+
+    optional Data data = 2;
+}

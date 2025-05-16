@@ -1,0 +1,25 @@
+syntax = "proto2";
+
+package apple;
+
+message Request {
+    message RequestWifi {
+        optional string mac = 1;
+    }
+
+    repeated RequestWifi wifis = 2;
+    optional int32 noise = 3 [default = 0];
+    optional int32 signal = 4 [default = 100];
+}
+
+message Response {
+    message Wifi {
+        message Location {
+            optional int64 latitude = 1;   // X * pow(10, -8)
+            optional int64 longitude = 2;  // X * pow(10, -8)
+        }
+        
+        optional Location location = 2;
+    }
+    repeated Wifi wifis = 2;
+}
